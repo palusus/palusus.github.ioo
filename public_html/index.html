@@ -29,7 +29,7 @@ and open the template in the editor.
             
         }
         var otazky=[];
-        for(c=0;c<25;c++){
+        for(c=0;c<30;c++){
             otazky[c]="Otázka číslo"+(c+1);
         }
         var kument="";
@@ -55,8 +55,8 @@ and open the template in the editor.
          
          function blbost(id){
             
-            x=id%5;
-            y=id/5-(id%5)/5;
+            x=id%6;
+            y=id/5-(id%6)/6;
             
             pole.innerHTML=otazky[id];
             dobre=document.getElementById("cdobre");
@@ -68,7 +68,8 @@ and open the template in the editor.
                 if(spravnaOdpoved==1){
                 
                 
-                    bodiky1+=(x+1)*1000;
+                    bodiky1+=(x)*1000;
+                    if(x===0) bodiky1+=1000;
                     pole1.innerHTML=bodiky1;
                     dobre.onclick="";
                     spatne.onclick="";
@@ -97,8 +98,9 @@ and open the template in the editor.
                 
                 if(spravnaOdpoved==1){
                 
-                
-                    bodiky2+=(x+1)*1000;
+                    
+                    bodiky2+=(x)*1000;
+                    if(x===0) bodiky2+=1000;
                     pole2.innerHTML=bodiky2;
                     dobre.onclick="";
                     spatne.onclick="";
@@ -127,14 +129,14 @@ and open the template in the editor.
             
             
         }
-        for(x=0;x<5;x++){for(y=0;y<5;y++){
+        for(x=0;x<6;x++){for(y=0;y<5;y++){
                 
-                id=y*5+x;
+                id=y*6+x;
                 left=0.36*sirka+0.07*sirka*x;
-                lefttt=36+7*x;
+                lefttt=29+7*x;
                 toppp=40+10*y;
                 topp=0.40*vyska+0.1*vyska*y;//100+100*y;
-                alertek="alert("+id+")";
+                alertek="alert("+id+")";//blbost("+id+")
                
                 
                 kument+="<div onClick ='blbost("+id+")' class='policka' id='c"+id+"' style=' left:"+lefttt+"%;top:"+toppp+"%;   z-index:3'></div>"//<canvas id='c"+id+"' width='"+(sirka*0.07)+"' height='"+vyska*0.1+"'\n\

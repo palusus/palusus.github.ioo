@@ -15,6 +15,9 @@ body {overflow: hidden; }
     width: 60%; height:20%; 
     border:1px solid #000000;
     position:absolute;
+    top:10%;
+    left:15%;
+    z-index:3
 
 }
 #cdobre{

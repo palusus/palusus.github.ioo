@@ -8,12 +8,9 @@ and open the template in the editor.
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-        <style>
-         body, html {height:100%;width:100%;}
-         div.wrap {height:100%;width:100%; overflow:hidden;}
-         body {overflow: hidden; }
-        </style>    
+           
     </head>
     
     <body id="b1" onload="todle()">
@@ -37,9 +34,9 @@ and open the template in the editor.
         }
         var kument="";
         var top=0;
-        var bodiky1=10;
+        var bodiky1=0;
         var counterr=0;
-        var bodiky2=10;
+        var bodiky2=0;
         var left=0;
         var spravnaOdpoved=2;
         var sirka=screen.width;
@@ -48,24 +45,23 @@ and open the template in the editor.
 		var sirka=screen.height;
 		var vyska=screen.width;
 		}
-        kument+="<div id='plac' style='position:absolute; top:"+(0.1*vyska)+"px; left:"+(0.15*sirka)+"px; z-index:3'><canvas id='cplac' width='"+(sirka*0.60)+"' height='"+(vyska*0.2)+"'\n\
+        kument+="<div id='cplac'  style='top:10%; left:"+(0.15*sirka)+"px; z-index:3'><canvas id='plac' width='"+(sirka*0.60)+"' height='"+(vyska*0.2)+"'\n\
                             style='border:1px solid #000000;'></canvas></div>";
-        kument+="<div id='tym1' style='position:absolute; top:"+(0.4*vyska)+"px; left:"+(0.06*sirka)+"px; z-index:3'><canvas id='ctym1' width='"+(sirka*0.14)+"' height='"+(vyska*0.2)+"'\n\
+        kument+="<div id='ctym1' style='position:absolute; top:"+(0.4*vyska)+"px; left:"+(0.06*sirka)+"px; z-index:3'><canvas id='tym1' width='"+(sirka*0.14)+"' height='"+(vyska*0.2)+"'\n\
                             ></canvas></div>";
-        kument+="<div id='tym2' style='position:absolute; top:"+(0.4*vyska)+"px; left:"+(0.9*sirka)+"px; z-index:3'><canvas id='ctym2' width='"+(sirka*0.14)+"' height='"+(vyska*0.2)+"'\n\
+        kument+="<div id='ctym2' style='position:absolute; top:"+(0.4*vyska)+"px; left:"+(0.9*sirka)+"px; z-index:3'><canvas id='tym2' width='"+(sirka*0.14)+"' height='"+(vyska*0.2)+"'\n\
                             ></canvas></div>";
-        kument+="<div id='dobre' style='position:absolute; top:"+(0.1*vyska)+"px; left:"+(0.75*sirka)+"px; z-index:3'><canvas id='cdobre' width='"+(sirka*0.1)+"' height='"+(vyska*0.1)+"'\n\
-                                style='border:1px solid #000000;'></canvas></div>";
-        kument+="<div id='spatne' style='position:absolute; top:"+(0.2*vyska)+"px; left:"+(0.75*sirka)+"px; z-index:3'><canvas id='cspatne' width='"+(sirka*0.1)+"' height='"+(vyska*0.1)+"'\n\
-                                style='border:1px solid #000000;'></canvas></div>";
+        kument+="<div id='cdobre' style='position:absolute; top:10%; left:"+(0.75*sirka)+"px; z-index:3'></div>";
+        kument+="<div id='cspatne' style='position:absolute; top:20%; left:"+(0.75*sirka)+"px; z-index:3'></div>";
     
-    
+         
          function blbost(id){
             
             x=id%5;
             y=id/5-(id%5)/5;
-            context.clearRect(0,0,2000,2000);
-            context.fillText(otazky[id],10,50);
+            //context.clearRect(0,0,2000,2000);
+            //context.fillText(otazky[id],10,50);
+            pole.innerHTML=otazky[id];
             dobre=document.getElementById("cdobre");
             spatne=document.getElementById("cspatne");
             dobre.onclick=function(){spravnaOdpoved=1;blbost(id);};
@@ -76,12 +72,15 @@ and open the template in the editor.
                 
                 
                     bodiky1+=(x+1)*1000;
-                    tym1.clearRect(0,0,1000,1100);
-                    tym1.fillText(bodiky1,10,50);
+                    //tym1.clearRect(0,0,1000,1100);
+                    //tym1.fillText(bodiky1,10,50);
+                    pole1.innerHTML=bodiky1;
                     dobre.onclick="";
                     spatne.onclick="";
-                    context.clearRect(0,0,2000,2000);
+                    //context.clearRect(0,0,2000,2000);
+                    pole.innerHTML="";
                     document.getElementById("c"+id).onclick="";
+                    document.getElementById("c"+id).style="background-color:red;";
                     spravnaOdpoved=2;
                     counterr++;
                 }
@@ -91,8 +90,10 @@ and open the template in the editor.
 
                     dobre.onclick="";
                     spatne.onclick="";
-                    context.clearRect(0,0,2000,2000);
+                    pole.innerHTML="";
+                    //context.clearRect(0,0,2000,2000);
                     document.getElementById("c"+id).onclick="";
+                    document.getElementById("c"+id).style="background-color:#999999;";
                     spravnaOdpoved=2;
                     counterr++;
                 }
@@ -105,11 +106,14 @@ and open the template in the editor.
                 
                 
                     bodiky2+=(x+1)*1000;
-                    tym2.clearRect(0,0,1000,1100);
-                    tym2.fillText(bodiky2,10,50);
+                    //tym2.clearRect(0,0,1000,1100);
+                    //tym2.fillText(bodiky2,10,50);
+                    pole2.innerHTML=bodiky2;
                     dobre.onclick="";
                     spatne.onclick="";
-                    context.clearRect(0,0,2000,2000);
+                    pole.innerHTML="";
+                    //context.clearRect(0,0,2000,2000);
+                    document.getElementById("c"+id).style="background-color:blue;";
                     document.getElementById("c"+id).onclick="";
                     spravnaOdpoved=2;
                     counterr++;
@@ -120,8 +124,10 @@ and open the template in the editor.
 
                     dobre.onclick="";
                     spatne.onclick="";
-                    context.clearRect(0,0,2000,2000);
+                    //context.clearRect(0,0,2000,2000);
+                    pole.innerHTML="";
                     document.getElementById("c"+id).onclick="";
+                    document.getElementById("c"+id).style="background-color:#999999;";
                     spravnaOdpoved=2;
                     counterr++;
                 }
@@ -149,10 +155,10 @@ and open the template in the editor.
         document.write(kument); 
         
         pole=document.getElementById("cplac");
-        
-        context=pole.getContext("2d");
-        context.font="40px Georgia";
-        context.fillstyle= "#000000";
+        pole.innerHTML="";
+        //context=pole.getContext("2d");
+        //context.font="40px Georgia";
+        //context.fillstyle= "#000000";
         //    img1=new Image();
         //    img1.src="img1000.png";
         //    img1.onload= function(){
@@ -160,15 +166,17 @@ and open the template in the editor.
         //    context.drawImage(img1,10,10,(pole.width*0.8),(pole.height*0.8));
         //};
         pole1=document.getElementById("ctym1");
-        tym1=pole1.getContext("2d");
-        tym1.font="20px Georgia";
-        tym1.fillStyle = "#ff0000";
-        tym1.fillText(bodiky1,10,50);
+        pole1.innerHTML=bodiky1;
+        //tym1=pole1.getContext("2d");
+        //tym1.font="20px Georgia";
+        //tym1.fillStyle = "#ff0000";
+        //tym1.fillText(bodiky1,10,50);
         pole2=document.getElementById("ctym2");
-        tym2=pole2.getContext("2d");
-        tym2.font="20px Georgia";
-        tym2.fillStyle = "#0000ff";
-        tym2.fillText(bodiky2,10,50);
+        pole2.innerHTML=bodiky2;
+        //tym2=pole2.getContext("2d");
+        //tym2.font="20px Georgia";
+        //tym2.fillStyle = "#0000ff";
+        //tym2.fillText(bodiky2,10,50);
             
             
             
@@ -189,7 +197,7 @@ and open the template in the editor.
             
     </script>
 </html>
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        <span class="site-footer-credits">.</span>
       </footer>
 
     </section>

@@ -32,4 +32,4 @@ body {overflow: hidden; }
 
 #ctym1{color:red;font-size: 40px;}
 #ctym2{color:blue;font-size: 40px;}
-.policka{background-color: yellowgreen;}
+.policka{background-color: yellowgreen; -webkit-background-size: 100% 100%;}

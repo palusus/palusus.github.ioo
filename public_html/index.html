@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<!--
+To chhange this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <style>
+         body, html {height:100%;width:100%;}
+         div.wrap {height:100%;width:100%; overflow:hidden;}
+         body {overflow: hidden; }
+        </style>    
+    </head>
+    
+    <body id="b1" onload="todle()">
+        
+        
+    </body>
+    
+    <script src='gg.js'></script>
+    <script>
+        function todle(){
+            for(x=1;x<6;x++){
+            var img1=new Image();
+            img1.src="img1000.png";
+            //eval("img"+x+"=new Image();img"+x+".src='img"+x+"000.png';")
+        }
+            
+        }
+        var otazky=[];
+        for(c=0;c<25;c++){
+            otazky[c]="Otázka číslo"+(c+1);
+        }
+        var kument="";
+        var top=0;
+        var bodiky1=0;
+        var counterr=0;
+        var bodiky2=0;
+        var left=0;
+        var spravnaOdpoved=2;
+        var sirka=screen.width;
+        var vyska=screen.height;
+	if (vyska >sirka){
+		var sirka=screen.height;
+		var vyska=screen.width;
+		}
+        kument+="<div id='plac' style='position:absolute; top:"+(0.1*vyska)+"px; left:"+(0.15*sirka)+"px; z-index:3'><canvas id='cplac' width='"+(sirka*0.60)+"' height='"+(vyska*0.2)+"'\n\
+                            style='border:1px solid #000000;'></canvas></div>";
+        kument+="<div id='tym1' style='position:absolute; top:"+(0.4*vyska)+"px; left:"+(0.06*sirka)+"px; z-index:3'><canvas id='ctym1' width='"+(sirka*0.14)+"' height='"+(vyska*0.2)+"'\n\
+                            ></canvas></div>";
+        kument+="<div id='tym2' style='position:absolute; top:"+(0.4*vyska)+"px; left:"+(0.9*sirka)+"px; z-index:3'><canvas id='ctym2' width='"+(sirka*0.14)+"' height='"+(vyska*0.2)+"'\n\
+                            ></canvas></div>";
+        kument+="<div id='dobre' style='position:absolute; top:"+(0.1*vyska)+"px; left:"+(0.75*sirka)+"px; z-index:3'><canvas id='cdobre' width='"+(sirka*0.1)+"' height='"+(vyska*0.1)+"'\n\
+                                style='border:1px solid #000000;'></canvas></div>";
+        kument+="<div id='spatne' style='position:absolute; top:"+(0.2*vyska)+"px; left:"+(0.75*sirka)+"px; z-index:3'><canvas id='cspatne' width='"+(sirka*0.1)+"' height='"+(vyska*0.1)+"'\n\
+                                style='border:1px solid #000000;'></canvas></div>";
+    
+    
+         function blbost(id){
+            
+            x=id%5;
+            y=id/5-(id%5)/5;
+            context.clearRect(0,0,2000,2000);
+            context.fillText(otazky[id],10,50);
+            dobre=document.getElementById("cdobre");
+            spatne=document.getElementById("cspatne");
+            dobre.onclick=function(){spravnaOdpoved=1;blbost(id);};
+            spatne.onclick=function(){spravnaOdpoved=0;blbost(id);};
+            //alert(dobre.onclick);//document.getElementById("c"+id).onclick);
+            if(counterr%2==1){
+                if(spravnaOdpoved==1){
+                
+                
+                    bodiky1+=(x+1)*1000;
+                    tym1.clearRect(0,0,1000,1100);
+                    tym1.fillText(bodiky1,10,50);
+                    dobre.onclick="";
+                    spatne.onclick="";
+                    context.clearRect(0,0,2000,2000);
+                    document.getElementById("c"+id).onclick="";
+                    spravnaOdpoved=2;
+                    counterr++;
+                }
+                if(spravnaOdpoved==0){
+                
+                
+
+                    dobre.onclick="";
+                    spatne.onclick="";
+                    context.clearRect(0,0,2000,2000);
+                    document.getElementById("c"+id).onclick="";
+                    spravnaOdpoved=2;
+                    counterr++;
+                }
+            }
+            else{
+                
+                
+                
+                if(spravnaOdpoved==1){
+                
+                
+                    bodiky2+=(x+1)*1000;
+                    tym2.clearRect(0,0,1000,1100);
+                    tym2.fillText(bodiky2,10,50);
+                    dobre.onclick="";
+                    spatne.onclick="";
+                    context.clearRect(0,0,2000,2000);
+                    document.getElementById("c"+id).onclick="";
+                    spravnaOdpoved=2;
+                    counterr++;
+                }
+                if(spravnaOdpoved==0){
+                
+                
+
+                    dobre.onclick="";
+                    spatne.onclick="";
+                    context.clearRect(0,0,2000,2000);
+                    document.getElementById("c"+id).onclick="";
+                    spravnaOdpoved=2;
+                    counterr++;
+                }
+            }
+
+            
+            
+            
+            
+        }
+        for(x=0;x<5;x++){for(y=0;y<5;y++){
+                
+                id=y*5+x;
+                left=0.36*sirka+0.07*sirka*x;
+                topp=0.40*vyska+0.1*vyska*y;//100+100*y;
+                alertek="alert("+id+")";
+               
+                
+                kument+="<div id='d"+id+"' style='position:absolute; top:"+topp+"px; left:"+left+"px; z-index:3'><canvas id='c"+id+"' width='"+(sirka*0.07)+"' height='"+vyska*0.1+"'\n\
+                            style='border:1px solid #000000;' onClick='blbost("+id+")'></canvas></div>";
+                
+                
+        }}
+        kument="<div class=wrap>"+kument+"</div>";
+        document.write(kument); 
+        
+        pole=document.getElementById("cplac");
+        
+        context=pole.getContext("2d");
+        context.font="40px Georgia";
+        context.fillstyle= "#000000";
+        //    img1=new Image();
+        //    img1.src="img1000.png";
+        //    img1.onload= function(){
+        //    
+        //    context.drawImage(img1,10,10,(pole.width*0.8),(pole.height*0.8));
+        //};
+        pole1=document.getElementById("ctym1");
+        tym1=pole1.getContext("2d");
+        tym1.font="20px Georgia";
+        tym1.fillStyle = "#ff0000";
+        tym1.fillText(bodiky1,10,50);
+        pole2=document.getElementById("ctym2");
+        tym2=pole2.getContext("2d");
+        tym2.font="20px Georgia";
+        tym2.fillStyle = "#0000ff";
+        tym2.fillText(bodiky2,10,50);
+            
+            
+            
+        window.addEventListener("mouseup", mouseUpListener, false);
+        for(y=0;y<5;y++){
+            
+            for(x=0;x<5;x++){
+                //policko.addEventListener("mousedown", mouseDownListener, false);
+            idd="c"+(y*5+x);
+            
+            //eval("var img"+idd+"=new Image();img"+idd+".src='img1000.png';policko"+idd+"=document.getElementById("+idd+");context"+idd+"=policko"+idd+".getContext('2d');img"+idd+".onload= function(){context.drawImage(img"+idd+",10,10);}");
+            
+          
+                
+        }}
+            
+            
+            
+    </script>
+</html>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>

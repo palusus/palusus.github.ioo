@@ -59,8 +59,7 @@ and open the template in the editor.
             
             x=id%5;
             y=id/5-(id%5)/5;
-            //context.clearRect(0,0,2000,2000);
-            //context.fillText(otazky[id],10,50);
+            
             pole.innerHTML=otazky[id];
             dobre=document.getElementById("cdobre");
             spatne=document.getElementById("cspatne");
@@ -72,15 +71,12 @@ and open the template in the editor.
                 
                 
                     bodiky1+=(x+1)*1000;
-                    //tym1.clearRect(0,0,1000,1100);
-                    //tym1.fillText(bodiky1,10,50);
                     pole1.innerHTML=bodiky1;
                     dobre.onclick="";
                     spatne.onclick="";
-                    //context.clearRect(0,0,2000,2000);
                     pole.innerHTML="";
                     document.getElementById("c"+id).onclick="";
-                    document.getElementById("c"+id).style="background-color:red; -webkit-background-size: 100% 100%;";
+                    document.getElementById("c"+id).style.background="red";
                     spravnaOdpoved=2;
                     counterr++;
                 }
@@ -91,9 +87,8 @@ and open the template in the editor.
                     dobre.onclick="";
                     spatne.onclick="";
                     pole.innerHTML="";
-                    //context.clearRect(0,0,2000,2000);
                     document.getElementById("c"+id).onclick="";
-                    document.getElementById("c"+id).style="background-color:#999999;";
+                    document.getElementById("c"+id).style.background="#999999";
                     spravnaOdpoved=2;
                     counterr++;
                 }
@@ -106,14 +101,11 @@ and open the template in the editor.
                 
                 
                     bodiky2+=(x+1)*1000;
-                    //tym2.clearRect(0,0,1000,1100);
-                    //tym2.fillText(bodiky2,10,50);
                     pole2.innerHTML=bodiky2;
                     dobre.onclick="";
                     spatne.onclick="";
                     pole.innerHTML="";
-                    //context.clearRect(0,0,2000,2000);
-                    document.getElementById("c"+id).style="background-color:blue;";
+                    document.getElementById("c"+id).style.background="blue";
                     document.getElementById("c"+id).onclick="";
                     spravnaOdpoved=2;
                     counterr++;
@@ -124,10 +116,9 @@ and open the template in the editor.
 
                     dobre.onclick="";
                     spatne.onclick="";
-                    //context.clearRect(0,0,2000,2000);
                     pole.innerHTML="";
                     document.getElementById("c"+id).onclick="";
-                    document.getElementById("c"+id).style="background-color:#999999;";
+                    document.getElementById("c"+id).style.background="#999999";
                     spravnaOdpoved=2;
                     counterr++;
                 }
@@ -142,12 +133,14 @@ and open the template in the editor.
                 
                 id=y*5+x;
                 left=0.36*sirka+0.07*sirka*x;
+                lefttt=36+7*x;
+                toppp=40+10*y;
                 topp=0.40*vyska+0.1*vyska*y;//100+100*y;
                 alertek="alert("+id+")";
                
                 
-                kument+="<div class='policka' id='d"+id+"' style='position:absolute; top:"+topp+"px; left:"+left+"px; z-index:3'><canvas id='c"+id+"' width='"+(sirka*0.07)+"' height='"+vyska*0.1+"'\n\
-                            style='border:1px solid #000000;' onClick='blbost("+id+")'></canvas></div>";
+                kument+="<div onClick ='blbost("+id+")' class='policka' id='c"+id+"' style=' left:"+lefttt+"%;top:"+toppp+"%;   z-index:3'></div>"//<canvas id='c"+id+"' width='"+(sirka*0.07)+"' height='"+vyska*0.1+"'\n\
+                            //style='border:1px solid #000000;' onClick='blbost("+id+")'></canvas></div>";
                 
                 
         }}
@@ -156,27 +149,10 @@ and open the template in the editor.
         
         pole=document.getElementById("cplac");
         pole.innerHTML="";
-        //context=pole.getContext("2d");
-        //context.font="40px Georgia";
-        //context.fillstyle= "#000000";
-        //    img1=new Image();
-        //    img1.src="img1000.png";
-        //    img1.onload= function(){
-        //    
-        //    context.drawImage(img1,10,10,(pole.width*0.8),(pole.height*0.8));
-        //};
         pole1=document.getElementById("ctym1");
         pole1.innerHTML=bodiky1;
-        //tym1=pole1.getContext("2d");
-        //tym1.font="20px Georgia";
-        //tym1.fillStyle = "#ff0000";
-        //tym1.fillText(bodiky1,10,50);
         pole2=document.getElementById("ctym2");
         pole2.innerHTML=bodiky2;
-        //tym2=pole2.getContext("2d");
-        //tym2.font="20px Georgia";
-        //tym2.fillStyle = "#0000ff";
-        //tym2.fillText(bodiky2,10,50);
             
             
             

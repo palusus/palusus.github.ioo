@@ -3,20 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 function blbost(id){
             
             x=id%6;
             y=id/5-(id%6)/6;
             
-            pole.innerHTML=otazky[id];
+            pole.innerHTML="<br><br>"+otazky[id];
             dobre=document.getElementById("cdobre");
             spatne=document.getElementById("cspatne");
             dobre.onclick=function(){spravnaOdpoved=1;blbost(id);};
             spatne.onclick=function(){spravnaOdpoved=0;blbost(id);};
             //alert(dobre.onclick);//document.getElementById("c"+id).onclick);
             if(counterr%2==1){
-                if(spravnaOdpoved==1){
                 
+                
+                if(spravnaOdpoved==1){
+                    
                 
                     bodiky1+=(x)*1000;
                     if(x===0) bodiky1+=1000;
@@ -28,6 +31,8 @@ function blbost(id){
                     document.getElementById("c"+id).style.background="red";
                     spravnaOdpoved=2;
                     counterr++;
+                    document.getElementById("h1").style.background="rgba(23, 0, 239, 0.05)";
+                    
                 }
                 if(spravnaOdpoved==0){
                 
@@ -40,6 +45,8 @@ function blbost(id){
                     document.getElementById("c"+id).style.background="#999999";
                     spravnaOdpoved=2;
                     counterr++;
+                    document.getElementById("h1").style.background="rgba(23, 0, 239, 0.05)";
+                    
                 }
             }
             else{
@@ -59,6 +66,7 @@ function blbost(id){
                     document.getElementById("c"+id).onclick="";
                     spravnaOdpoved=2;
                     counterr++;
+                    document.getElementById("h1").style.background="rgba(239, 0, 0, 0.05)";
                 }
                 if(spravnaOdpoved==0){
                 
@@ -71,6 +79,7 @@ function blbost(id){
                     document.getElementById("c"+id).style.background="#999999";
                     spravnaOdpoved=2;
                     counterr++;
+                    document.getElementById("h1").style.background="rgba(239, 0, 0, 0.05)";
                 }
             }
     

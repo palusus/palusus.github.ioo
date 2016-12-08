@@ -8,19 +8,25 @@ and open the template in the editor.
     Author     : Paaajaaa
 */
 body, html {height:100%;width:100%;}
+html{background-color: rgba(23, 0, 239, 0.05);}
 div.wrap {height:100%;width:100%; overflow:hidden;}
 body {overflow: hidden; }
-#c24{background-color: white;}
+#c24{}
 #cplac{
     width: 60%; height:20%; 
-    
+    font-family: Geneva,Tahoma,Verdana,sans-serif;
     position:absolute;
     background-color: rgba(224, 224, 224, 0.4);
     top:10%;
     left:15%;
-    z-index:3
-
+    z-index:3;
+    text-align: center;
+    vertical-align:middle;
+    display:table-cell;
+    vertical-align:middle ; 
+    text-align-last: 
 }
+
 #ukazOdpoved{
     width: 7%; height:4%;
     font-family: Geneva,Tahoma,Verdana,sans-serif; 
@@ -90,8 +96,9 @@ body {overflow: hidden; }
     font-size: 40px;
 }
 .policka{
-    background-color: white; -webkit-background-size: 100% 100%;
+    background-color: white; 
     position:absolute;
     border:1px solid #000000;
     width:7%;height:10%;
 }
+

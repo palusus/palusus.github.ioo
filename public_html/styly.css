@@ -13,30 +13,62 @@ body {overflow: hidden; }
 #c24{background-color: white;}
 #cplac{
     width: 60%; height:20%; 
-    border:1px solid #000000;
+    
     position:absolute;
+    background-color: rgba(224, 224, 224, 0.4);
     top:10%;
     left:15%;
     z-index:3
 
 }
-#cdobre{
-    width: 10%; height:10%; 
-    border:1px solid #000000;
+#ukazOdpoved{
+    width: 7%; height:4%;
+    font-family: Geneva,Tahoma,Verdana,sans-serif; 
     position:absolute;
-    top:10%;
-    left:75%;
+    top:6%;
+    left:20%;
     z-index:3;
+    background-color: rgba(245, 24, 24, 0.1);
+    color:rgba(245, 24, 24, 0.02);
+    text-align: center;
+    vertical-align:middle;
+}
+#ukazOdpoved:hover, #ukazOdpoved:active {
+    color: pink;
+}
+
+
+#cdobre{
+    width: 5%; height:4%; 
+    font-family: Geneva,Tahoma,Verdana,sans-serif; 
+    position:absolute;
+    top:6%;
+    left:65%;
+    z-index:3;
+    background-color: rgba(23, 248, 11, 0.35);
+    color:rgba(245, 24, 24, 0.02);
+    text-align: center;
+    vertical-align:middle;
     
 }
+#cdobre:hover, #cdobre:active {
+    color: limegreen;
+}
 #cspatne{
-    width: 10%; height:10%; 
-    border:1px solid #000000;
+    width: 5%; height:4%; 
+    font-family: Geneva,Tahoma,Verdana,sans-serif; 
     position:absolute;
-    top:20%;
-    left:75%;
+    top:6%;
+    left:58%;
     z-index:3;
+    background-color: rgba(248, 11, 11, 0.35);
+    color:rgba(245, 24, 24, 0.02);
+    text-align: center;
+    vertical-align:middle;
     
+}
+#cspatne:hover, #cspatne:active {
+    color: red;
 }
 
 #ctym1{

@@ -22,8 +22,9 @@ var kument="";
 kument+="<div id='cplac'></div>";
 kument+="<div id='ctym1' ></div>";
 kument+="<div id='ctym2' ></div>";
-kument+="<div id='cdobre' ></div>";
-kument+="<div id='cspatne'></div>";
+kument+="<div id='cdobre' >Dobře</div>";
+kument+="<div id='cspatne'>Špatně</div>";
+kument+="<div id='ukazOdpoved'>Odpověď</div>";
 
 
 

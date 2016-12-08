@@ -30,7 +30,8 @@ for(c=0;c<12;c++){
 for(c=0;c<5;c++){
     nazvyTemat[c]="Název tématu"+(c+1);
 }
-
+nazvyTemat[0]="Hlášky učitelů";
+nazvyTemat[1]="Hlášky žáků";
 var kument="";
 kument+="<div id='cplac'></div>";
 kument+="<div id='ctym1' ></div>";

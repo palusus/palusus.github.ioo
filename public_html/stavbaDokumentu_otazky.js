@@ -22,6 +22,9 @@ for(c=0;c<12;c++){
 for(c=0;c<30;c++){
     odpovedi[c]="Odpověď číslo"+(c+1);
 }
+var odpovedis=["puč. Wisczorová","puč. Jursová"," puč. Macurová","puč. Raszková","puč. Wiszczorová","puč. Babilonová","Pavel","Tomáš Cieslar","Tomáš Cieslar","Pavel","Pavel","Denis"]
+for(c=0;c<12;c++){
+    odpovedi[c]=odpovesis[c];
 for(c=0;c<5;c++){
     nazvyTemat[c]="Název tématu"+(c+1);
 }

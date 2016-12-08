@@ -3,17 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+var navic="";
 function blbost(id){
             
             x=id%6;
             y=id/5-(id%6)/6;
             
-            pole.innerHTML="<br><br>"+otazky[id];
+            var id;
+            ukazOdpoved=document.getElementById("ukazOdpoved");
+            ukazOdpoved.onclick=function(){navic="<br><br>Odpověď je: "+odpovedi[id];blbost(id);};
+            
+            pole.innerHTML="<br>"+otazky[id]+navic;
             dobre=document.getElementById("cdobre");
             spatne=document.getElementById("cspatne");
+            
             dobre.onclick=function(){spravnaOdpoved=1;blbost(id);};
             spatne.onclick=function(){spravnaOdpoved=0;blbost(id);};
+            
             //alert(dobre.onclick);//document.getElementById("c"+id).onclick);
             if(counterr%2==1){
                 
@@ -26,12 +32,14 @@ function blbost(id){
                     pole1.innerHTML=bodiky1;
                     dobre.onclick="";
                     spatne.onclick="";
+                    ukazOdpoved.onclick="";
                     pole.innerHTML="";
                     document.getElementById("c"+id).onclick="";
                     document.getElementById("c"+id).style.background="red";
                     spravnaOdpoved=2;
                     counterr++;
                     document.getElementById("h1").style.background="rgba(23, 0, 239, 0.05)";
+                    navic="";
                     
                 }
                 if(spravnaOdpoved==0){
@@ -40,13 +48,14 @@ function blbost(id){
 
                     dobre.onclick="";
                     spatne.onclick="";
+                    ukazOdpoved.onclick="";
                     pole.innerHTML="";
                     document.getElementById("c"+id).onclick="";
                     document.getElementById("c"+id).style.background="#999999";
                     spravnaOdpoved=2;
                     counterr++;
                     document.getElementById("h1").style.background="rgba(23, 0, 239, 0.05)";
-                    
+                    navic="";
                 }
             }
             else{
@@ -61,11 +70,13 @@ function blbost(id){
                     pole2.innerHTML=bodiky2;
                     dobre.onclick="";
                     spatne.onclick="";
+                    ukazOdpoved.onclick="";
                     pole.innerHTML="";
                     document.getElementById("c"+id).style.background="blue";
                     document.getElementById("c"+id).onclick="";
                     spravnaOdpoved=2;
                     counterr++;
+                    navic="";
                     document.getElementById("h1").style.background="rgba(239, 0, 0, 0.05)";
                 }
                 if(spravnaOdpoved==0){
@@ -74,11 +85,13 @@ function blbost(id){
 
                     dobre.onclick="";
                     spatne.onclick="";
+                    ukazOdpoved.onclick="";
                     pole.innerHTML="";
                     document.getElementById("c"+id).onclick="";
                     document.getElementById("c"+id).style.background="#999999";
                     spravnaOdpoved=2;
                     counterr++;
+                    navic="";
                     document.getElementById("h1").style.background="rgba(239, 0, 0, 0.05)";
                 }
             }

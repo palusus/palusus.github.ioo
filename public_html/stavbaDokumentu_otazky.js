@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 
-
+var navic="";
 var bodiky1=0;
 var counterr=0;
 var bodiky2=0;
 var spravnaOdpoved=2;
 var otazky=[];
+var odpovedi=[];
+var nazvyTemat=[];
 for(c=0;c<30;c++){
     otazky[c]="Otázka číslo"+(c+1);
 }
@@ -17,6 +19,12 @@ for(c=0;c<30;c++){
 for(c=0;c<12;c++){
     otazky[c]=otazkis[c];
 }*/
+for(c=0;c<30;c++){
+    odpovedi[c]="Odpověď číslo"+(c+1);
+}
+for(c=0;c<5;c++){
+    nazvyTemat[c]="Název tématu"+(c+1);
+}
 
 var kument="";
 kument+="<div id='cplac'></div>";
@@ -30,11 +38,16 @@ kument+="<div id='ukazOdpoved'>Odpověď</div>";
 
 for(x=0;x<6;x++){for(y=0;y<5;y++){
         id=y*6+x;
-        lefttt=29+7*x;
-        toppp=40+10*y;
+        lefttt=29+7.2*x;
+        toppp=40+10.2*y;
         alertek="alert("+id+")";
-        kument+="<div onClick ='blbost("+id+")' class='policka' id='c"+id+"' style=' left:"+lefttt+"%;top:"+toppp+"%;   z-index:3'></div>";
-}}
+        if(x===0){
+             kument+="<div onClick ='blbost("+id+")' class='policka1' id='c"+id+"' style=' left:"+(lefttt-5)+"%;top:"+(toppp)+"%;   z-index:3'><br>"+nazvyTemat[y]+"</div>";
+        }
+        else{
+        kument+="<div onClick ='blbost("+id+")' class='policka' id='c"+id+"' style=' left:"+lefttt+"%;top:"+toppp+"%;   z-index:3'><br>"+(x*1000)+"</div>";
+    }
+    }}
 
 kument="<div class=wrap>"+kument+"</div>";
 document.write(kument);

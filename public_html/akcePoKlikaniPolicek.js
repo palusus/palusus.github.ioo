@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 var navic="";
-var gympl="<img src='IMG_1286.jpg'>";
+var gympl="<img src='IMG_1286.JPG'>";
 function blbost(id){
             
             x=id%6;

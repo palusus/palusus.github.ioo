@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 var navic="";
+var gympl="<img src='IMG_1286.jpg'>";
 function blbost(id){
             
             x=id%6;
@@ -29,7 +30,7 @@ function blbost(id){
                 
                     bodiky1+=(x)*1000;
                     if(x===0) bodiky1+=1000;
-                    pole1.innerHTML=bodiky1;
+                    pole1.innerHTML=bodiky1+gympl;
                     dobre.onclick="";
                     spatne.onclick="";
                     ukazOdpoved.onclick="";
@@ -67,7 +68,7 @@ function blbost(id){
                     
                     bodiky2+=(x)*1000;
                     if(x===0) bodiky2+=1000;
-                    pole2.innerHTML=bodiky2;
+                    pole2.innerHTML=bodiky2 +gympl;
                     dobre.onclick="";
                     spatne.onclick="";
                     ukazOdpoved.onclick="";

@@ -30,7 +30,7 @@ function blbost(id){
                 
                     bodiky1+=(x)*1000;
                     if(x===0) bodiky1+=1000;
-                    pole1.innerHTML=bodiky1+gympl;
+                    pole1.innerHTML=gympl+bodiky1;
                     dobre.onclick="";
                     spatne.onclick="";
                     ukazOdpoved.onclick="";
@@ -68,7 +68,7 @@ function blbost(id){
                     
                     bodiky2+=(x)*1000;
                     if(x===0) bodiky2+=1000;
-                    pole2.innerHTML=bodiky2 +gympl;
+                    pole2.innerHTML=gympl+bodiky2;
                     dobre.onclick="";
                     spatne.onclick="";
                     ukazOdpoved.onclick="";

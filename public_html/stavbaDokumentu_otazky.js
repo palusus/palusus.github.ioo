@@ -32,6 +32,9 @@ for(c=0;c<5;c++){
 }
 nazvyTemat[0]="Hlášky učitelů";
 nazvyTemat[1]="Hlášky žáků";
+nazvyTemat[2]="Přezdívky";
+nazvyTemat[3]="Znáte 6.B?";
+nazvyTemat[4]="Krásná 6.B";
 var kument="";
 kument+="<div id='cplac'></div>";
 kument+="<div id='ctym1' ></div>";

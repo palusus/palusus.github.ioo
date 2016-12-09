@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+var gympl="<img width='30' height='30' src='IMG_1287.PNG'>";
 var navic="";
 var bodiky1=0;
 var counterr=0;
@@ -68,6 +68,6 @@ document.write(kument);
 pole=document.getElementById("cplac");
 pole.innerHTML="";
 pole1=document.getElementById("ctym1");
-pole1.innerHTML=bodiky1;
+pole1.innerHTML=gympl+bodiky1;
 pole2=document.getElementById("ctym2");
-pole2.innerHTML=bodiky2;
+pole2.innerHTML=gympl+bodiky2;

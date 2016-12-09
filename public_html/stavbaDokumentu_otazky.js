@@ -15,15 +15,15 @@ var nazvyTemat=[];
 for(c=0;c<30;c++){
     otazky[c]="Otázka číslo"+(c+1);
 }
-var otazkis=["Martine nevykřikuj a řekni to nahlas!","Vědci dokázali, že dívky, které ve vyučování používají mobil, budou v dospělosti hnusné jako noc. A kdo se cpe v mých hodinách, bude ve 20 tlustý jako bečka!","Jak by se vám líbilo, kdybyste dostávali celou výplatu ve dřevě? Dá se dřevo vůbec jíst?... Papír určitě, hlavně když jsou na něm taháky!","Martina chce něco dodat? Teda Tomáš.","Nikolo, ty furt meleš naprázdno, kdybych ti aspoň přinesla nějaké maso, bys mi ho pomlela!","Tomáš Cieslar: A co je to za oční vadu, když vidím takové tmavé šmouhy? Učitel XY: To sis jen špatně odlíčil oči!","Puč. Wiszczorová: Co dělá maminka, když k vám přijde do pokoje a řekne: nemáš uklizeno, měl by sis ustlat? Žák XY: Buzeruje!","Puč. Jursová: Když kůň vykročil pravou nohou, znamenalo to úspěch. Žák XY: A když levou, tak šel do salámu.","Puč. Černá: Na co se ještě využívá síra? Žák XY: Na výrobu dětských krmiv!","Film Valmont režíroval český režisér světového významu. Který? Žák XY: Zdeněk Troška.","Paní učitelko, velmi se omlouvám, zapomněl jsem zapomenout domácí úkol.","Puč: Wiszczorová: Markétka se rozhodne své dítě utopit… Žák XY: Ano, takže je to utopický román!"];
-for(c=0;c<12;c++){
+var otazkis=["Martine nevykřikuj a řekni to nahlas!","Vědci dokázali, že dívky, které ve vyučování používají mobil, budou v dospělosti hnusné jako noc. A kdo se cpe v mých hodinách, bude ve 20 tlustý jako bečka!","Jak by se vám líbilo, kdybyste dostávali celou výplatu ve dřevě? Dá se dřevo vůbec jíst?... Papír určitě, hlavně když jsou na něm taháky!","Martina chce něco dodat? Teda Tomáš.","Nikolo, ty furt meleš naprázdno, kdybych ti aspoň přinesla nějaké maso, bys mi ho pomlela!","Tomáš Cieslar: A co je to za oční vadu, když vidím takové tmavé šmouhy? Učitel XY: To sis jen špatně odlíčil oči!","Puč. Wiszczorová: Co dělá maminka, když k vám přijde do pokoje a řekne: nemáš uklizeno, měl by sis ustlat? Žák XY: Buzeruje!","Puč. Jursová: Když kůň vykročil pravou nohou, znamenalo to úspěch. Žák XY: A když levou, tak šel do salámu.","Puč. Černá: Na co se ještě využívá síra? Žák XY: Na výrobu dětských krmiv!","Film Valmont režíroval český režisér světového významu. Který? Žák XY: Zdeněk Troška.","Paní učitelko, velmi se omlouvám, zapomněl jsem zapomenout domácí úkol.","Puč: Wiszczorová: Markétka se rozhodne své dítě utopit… Žák XY: Ano, takže je to utopický román!","Komu se přezdívá Gutoš?","Komu se přezdívá Ted?","Komu se přezdívá Chlupatice?","Komu se přezdívá Poník?","Komu se přezdívá Mike G?","Komu se přezdívá Černý anděl?","Kterou osobu má naše třída ze všech nejraději?","Jaký typ ubytování má naše třída nejraději?","Kolik lidí z naší třídy nosilo/nosí rovnátka?","Kdo omdlel v alergické reakci po snězení manga ze školní jídelny?","Kdo omdlel na pitvě?","Z jakého předmětu měl Tomáš Kyzek svou jedinou dvojku na vysvědčení?","<img class='fotka' src='katicutek.jpg'>","<img class='fotka' src='anickatka.jpg'>","<img class='fotka' src='tutkola.jpg'>","<img class='fotka' src='nikolutek.jpg'>","<img class='fotka' src='laurotutek.jpg'>","<img class='fotka' src='lauroponik.jpg'>"];
+for(c=0;c<30;c++){
     otazky[c]=otazkis[c];
 }
 for(c=0;c<30;c++){
-    odpovedi[c]="Odpověď číslo"+(c+1);
+    odpovedi[c]="";
 }
-var odpovedis=["puč. Wisczorová","puč. Jursová"," puč. Macurová","puč. Raszková","puč. Wiszczorová","puč. Babilonová","Pavel","Tomáš Cieslar","Tomáš Cieslar","Pavel","Pavel","Denis"];
-for(c=0;c<12;c++){
+var odpovedis=["puč. Wisczorová","puč. Jursová"," puč. Macurová","puč. Raszková","puč. Wiszczorová","puč. Babilonová","Pavel","Tomáš Cieslar","Tomáš Cieslar","Pavel","Pavel","Denis","Lukáš","Tomáš Cieslar","Nikol","Daniel Harok","Míša Mieszek","Martin Zaby","Paní učitelku Wiszczorovou","kláštěr","3","Katka Argalášová","Katka Argalášová","chemie"];
+for(c=0;c<24;c++){
     odpovedi[c]=odpovedis[c];
 }
     
@@ -40,6 +40,10 @@ kument+="<div id='cdobre' >Dobře</div>";
 kument+="<div id='cspatne'>Špatně</div>";
 kument+="<div id='ukazOdpoved'>Odpověď</div>";
 
+hah=function(){
+    pole.innerHTML="";
+}
+kument+="<div id='odstranCplac' onClick='hah()'>×</div>";
 
 
 for(x=0;x<6;x++){for(y=0;y<5;y++){

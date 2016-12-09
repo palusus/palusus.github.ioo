@@ -23,8 +23,8 @@ body {overflow: hidden; }
     z-index:3;
     text-align: center;
     vertical-align:middle;
+    z-index: 20;
     
-     
 }
 
 #ukazOdpoved{
@@ -111,4 +111,16 @@ body {overflow: hidden; }
     width:12%;height:10%;
     font-weight: bold;
     text-align: center;
+}
+.fotka{
+    z-index: 30;
+}
+#odstranCplac{
+    position:absolute;
+    width: 4%; height:4%; 
+    top:9%;
+    left:76%;
+    z-index:50;
+    color:red;
+    font-size: 40px;
 }

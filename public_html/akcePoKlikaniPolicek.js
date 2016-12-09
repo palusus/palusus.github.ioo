@@ -7,12 +7,12 @@ var navic="";
 function blbost(id){
             
             x=id%6;
-            y=id/5-(id%6)/6;
+            y=Math.floor(id/5-(id%6)/6);
             
             var id;
             ukazOdpoved=document.getElementById("ukazOdpoved");
             ukazOdpoved.onclick=function(){navic="<br><br>Odpověď je: "+odpovedi[id];blbost(id);};
-            
+            if(navic!="<br><br>Odpověď je: "+odpovedi[id]){navic=""}
             pole.innerHTML="<br>"+otazky[id]+navic;
             dobre=document.getElementById("cdobre");
             spatne=document.getElementById("cspatne");
